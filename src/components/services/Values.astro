@@ -1,0 +1,62 @@
+---
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'Freight Transportation',
+      description:
+        'we are dedicated to providing unparalleled transportation services that exceed expectations. Our unwavering commitment to excellence ensures that every journey is safe, efficient, and enjoyable. By prioritizing customer satisfaction and continuously improving our operations, we strive to set the industry standard for reliability and quality in transport.',
+    },
+    {
+      ref: '02',
+      name: 'Warehousing and Storage',
+      description:
+        'we pride ourselves on unwavering dependability. Our commitment to reliability ensures that your cargo reaches its destination safely and on time, every time. With a dedicated team and a state-of-the-art fleet, we provide consistent, top-quality service you can count on. Trust us to deliver excellence, no matter the journey.',
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: 'Distribution Services',
+      description:
+        'we understand that in transportation, every detail matters. Our commitment to precision ensures that each shipment is handled with the utmost care and accuracy. From meticulous planning and route optimization to thorough documentation and real-time tracking, we leave no stone unturned. ',
+    },
+  ],
+  [
+    {
+      ref: '04',
+      name: 'Specialized Services',
+      description:
+        'we understand that in transportation, every detail matters. Our commitment to precision ensures that each shipment is handled with the utmost care and accuracy. From meticulous planning and route optimization to thorough documentation and real-time tracking, we leave no stone unturned. ',
+    },
+  ],
+  
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our Services</h2>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          values.map((column, index) => (
+            <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+              {column.map((value) => (
+                <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+                  <p class="text-sm">{value.ref}</p>
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-xl font-medium">{value.name}</h3>
+                    <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

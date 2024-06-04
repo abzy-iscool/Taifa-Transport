@@ -1,0 +1,63 @@
+---
+const services = [
+  {
+    step: '01',
+    name: 'Liquid-Bulk Tankers',
+    description:
+      'Our specialized vessels are designed to transport large quantities of liquid cargoes, such as crude oil, refined petroleum products, chemicals, and liquefied natural gas (LNG). These tankers are equipped with multiple compartments to separate different types of liquids and ensure safe and efficient transport.',
+  },
+  {
+    step: '02',
+    name: 'Dry-Bulk Tankers',
+    description:
+      'Our Dry-bulk tankers provide specialized transportation services for bulk materials such as grains, cement, sand, minerals, and chemicals. These trucks are equipped with tanks or hoppers designed to handle and protect dry bulk cargo from contamination and weather conditions.',
+  },
+  {
+    step: '03',
+    name: 'Dangerous Goods',
+    description:
+      'Our Fleet Specializes in the safe and compliant transport of hazardous materials with experienced professionals and state-of-the-art equipment, we prioritize safety, regulatory compliance, and timely delivery to meet all your hazardous material transportation needs',
+  },
+  {
+    step: '04',
+    name: 'General Cargo',
+    description:
+      'Our General Cargo services offer efficient and reliable transportation solutions for a wide range of goods our experienced team and extensive network ensure seamless handling of your cargo',
+  },
+  {
+    step: '05',
+    name: 'Tippers',
+    description:
+      'Our tipper truck services offer reliable and efficient transportation of bulk materials such as soil, sand, gravel, and construction debris. Equipped with hydraulic systems for easy loading and unloading, our fleet ensures timely and cost-effective delivery to your site',
+  },
+  {
+    step: '06',
+    name: 'Abnormal Loads',
+    description:
+      'Our Abnormal Loads services specialize in the transportation of oversized and heavy cargo. We manage every aspect of moving large machinery, construction materials, and industrial equipment, ensuring compliance with all legal requirements.',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Services</h2>
+      <div class="grid gap-8 lg:grid-cols-3">
+        {
+          services.map((service) => (
+            <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+              <p class="text-sm">{service.step}</p>
+              <div class="flex flex-col gap-4">
+                <h3 class="text-xl font-medium">{service.name}</h3>
+                <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

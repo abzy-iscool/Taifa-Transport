@@ -1,0 +1,78 @@
+---
+import About from "./About.astro";
+import Services from "./Services.astro";
+import Testimonials from "./Testimonials.astro";
+
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'A Little About Us',
+      description:
+        "Taifa Transport & Logistics Limited, a trusted name in Tanzania's transportation industry, provides reliable and efficient transport solutions with a modern fleet and commitment to excellent customer service",
+    },
+    {
+      ref: '02',
+      name: 'UNWAVERING DEPENDABILITY',
+      description:
+        'we pride ourselves on unwavering dependability. Our commitment to reliability ensures that your cargo reaches its destination safely and on time, every time. With a dedicated team and a state-of-the-art fleet, we provide consistent, top-quality service you can count on. Trust us to deliver excellence, no matter the journey.',
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: 'ATTENTION TO DETAIL',
+      description:
+        'we understand that in transportation, every detail matters. Our commitment to precision ensures that each shipment is handled with the utmost care and accuracy. From meticulous planning and route optimization to thorough documentation and real-time tracking, we leave no stone unturned. ',
+    },
+  ],
+];
+---
+<section class="py-16 sm:py-10">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-16">
+      <div class="flex flex-col gap-8 sm:gap-10">
+        <div class="flex max-w-xl flex-col items-start gap-4 sm:gap-6">
+          <img
+            class="w-40 h-40"
+            :src="$store.theme.isDark ? '/assets/taifa-logo.png' : '/assets/taifa-logo.png'"
+            alt="Taifa Transport Logo"
+          />
+          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+            Transportation connects the world, logistics keeps it moving.
+          </h1>
+        </div>
+        <section class="py-16 sm:py-20">
+          <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
+            <div
+              class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col items-center gap-8 rounded-3xl px-5 py-16 sm:gap-10"
+            >
+              <div class="flex flex-col gap-4 sm:gap-6">
+                <p class="mx-auto max-w-2xl text-lg font-semibold">
+                  Driving Excellence in Every Mile Your Trusted Partner for Safe, Timely, and Cost-Effective Logistics
+                </p>
+              </div>
+              <a
+                href="/contact"
+                class="bg-primary-600 dark:bg-primary-400 hover:bg-primary-700 dark:hover:bg-primary-300 focus-visible:outline-primary-600 dark:focus-visible:outline-primary-400 dark:text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+      <img
+        class="h-auto w-full rounded-3xl"
+        width="1280"
+        height="640"
+        src="/assets/fleet-showcase.png"
+        alt="Hero picture"
+      />
+      <About/>
+      <Services/>
+      <Testimonials />
+    </div>
+  </div>
+</section>
