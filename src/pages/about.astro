@@ -1,0 +1,31 @@
+---
+import Heading from '../components/about/Heading.astro';
+import Mission from '../components/about/Mission.astro';
+import Team from '../components/about/Team.astro';
+import Values from '../components/about/Values.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  description="Find more our history, values, mission and more. We are a group of people who share the same values."
+  title="About Us Taifa Transport & Logistics"
+>
+  <Heading />
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
+      <div
+        class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col items-center gap-8 rounded-3xl px-5 py-16 sm:gap-10"
+      >
+        <div class="flex flex-col gap-4 sm:gap-6">
+          <p class="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-2xl text-lg">
+            Founded in 2020, Taifa Transport & Logistics Limited (Taifa) has rapidly emerged as a trusted leader in the transportation industry. Renowned for our commitment to excellence, we established a state-of-the-art facility in 2021 to support our modern fleet of tractors, trailers, and fuel tankers. As an asset-based provider, we prioritize customer satisfaction through superior service, skilled drivers, advanced equipment, and unmatched reliability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Mission />
+  <Values />
+  <Team />
+</Layout>

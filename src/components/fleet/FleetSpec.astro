@@ -1,0 +1,39 @@
+---
+const services = [
+  {
+    image: 'https://cdn.cosmicjs.com/e4f8a740-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.45-PM.jpeg',
+    name: 'Scania 410',
+    description:
+      'The Scania P410 stands out as a powerhouse in the world of heavy-duty trucks, blending impressive performance with unmatched reliability. Engineered with a robust 13-liter engine, the P410 delivers a formidable 410 horsepower, ensuring it can tackle even the most demanding haulage tasks with ease. Its ergonomic design prioritizes driver comfort, featuring an advanced suspension system and a spacious, well-appointed cabin that minimizes fatigue on long journeys. With state-of-the-art safety features and exceptional fuel efficiency, the Scania P410 is a favorite among fleet operators looking for a truck that offers both power and practicality without compromise.',
+  },
+  {
+    image: 'https://cdn.cosmicjs.com/e5ed4070-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.46-PM.jpeg',
+    name: 'Scania P360 XT',
+    description:
+      'The Scania P360 XT is the epitome of rugged durability and versatile functionality, designed specifically for challenging environments and off-road applications. Equipped with a 360-horsepower engine, this truck is engineered to deliver consistent, reliable performance under the toughest conditions. The XT variant boasts reinforced chassis components, enhanced ground clearance, and robust protective features that make it ideal for construction sites and other demanding terrains. Inside, the P360 XT provides a driver-focused experience with intuitive controls, a comfortable seat, and comprehensive visibility, ensuring that drivers can work efficiently and safely. The Scania P360 XT is a testament to Scanias commitment to producing vehicles that combine strength, reliability, and cutting-edge technology.',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-12 sm:gap-16">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Fleet Specifications</h2>
+      <div class="grid gap-8  ">
+        {
+          services.map((service) => (
+            <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+              <img class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto mx-auto p-4 object-contain" src={service.image} alt={`${service.name} image`} />
+              <div class="flex flex-col gap-4">
+                <h3 class="text-xl font-medium">{service.name}</h3>
+                <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
