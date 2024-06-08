@@ -1,0 +1,64 @@
+---
+import { getFeaturedPost } from '../lib/cosmic'
+
+interface Props {
+  title: string
+  slug: string
+  metadata: {
+    excerpt: string
+    tags: {
+      title: string
+      metadata: {
+        color?: string
+      }
+    }[]
+    cover_image?: {
+      url: string
+      imgix_url: string
+    }
+  }
+}
+
+const featuredPost = await getFeaturedPost()
+const tags = featuredPost.metadata.tags
+---
+
+<section class="rounded-md bg-white">
+    <a
+      href={`blog/${featuredPost.slug}`}
+      class="transition-opacity hover:opacity-80">
+      {
+        featuredPost.metadata.cover_image && (
+          <img
+            src={`${featuredPost.metadata.cover_image.imgix_url}?w=1200&auto=format,compression`}
+            width={1200}
+            height={575}
+            alt="Featured Blog Post"
+            class={'rounded-t-md'}
+            loading="lazy"
+            transition:name="cover image"
+          />
+        )
+      }
+      <div
+        class="flex h-fit flex-col gap-y-2 rounded-md bg-white p-6 shadow-md">
+        <h2 class="text-3xl font-semibold">{featuredPost.title}</h2>
+        <p class="text-lg">{featuredPost.metadata.excerpt}</p>
+        {
+          tags && (
+            <div class="flex flex-wrap gap-1">
+              {tags?.map(
+                (tag: { title: string; metadata: { color?: string } }) => (
+                  <span
+                    class="w-fit whitespace-nowrap rounded-md bg-black px-2 text-sm font-bold text-white shadow transition"
+                    style={`background-color: ${tag.metadata.color}`}>
+                    {tag.title}
+                  </span>
+                )
+              )}
+            </div>
+          )
+        }
+      </div>
+    </a>
+  </section>
