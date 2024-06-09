@@ -1,0 +1,100 @@
+---
+const features = [
+  {
+    id: 'expertise-1',
+    name: 'Fluid Logistics Solutions',
+    description:
+      'We provide specialized liquid-bulk tanker services, adeptly managing the transportation of fuel, oil, acids and chemicals. Our fleet of dedicated tankers is designed to ensure the safe and secure delivery of these liquids, adhering to the highest industry standards for handling hazardous materials. We are honored to be the esteemed transport partner for Barrick Gold Mines, managing the meticulous delivery of fuel from Dar Es Salaam to their Bulyanhulu, Buzwagi, and North Mara mining locations'
+  },
+  {
+    id: 'expertise-2',
+    name: 'Solid Cargo Transport Services',
+    description:
+      'We offer comprehensive dry-bulk tanker services, expertly catering to the transportation needs of granular and powdered materials Our fleet of specialized dry-bulk tankers is equipped with advanced pneumatic systems for efficient loading and unloading, ensuring your materials are transported safely and delivered on schedule. Trust us to handle your bulk materials with the care and precision they require, from cement and grains to sugar and minerals.',
+  },
+  {
+    id: 'expertise-3',
+    name: 'Hazardous Materials Handling',
+    description:
+      'We provide specialized transportation of dangerous goods, including cyanide and similar hazardous materials. Our services are meticulously tailored to address the unique challenges posed by items with flammable, corrosive, toxic, or explosive properties. We adhere to the most stringent safety regulations, ensuring that these sensitive materials are transported with the highest level of care and compliance.',
+  },
+  {
+    id: 'expertise-4',
+    name: 'Versatile Freight Management',
+    description:
+      'We provide comprehensive transportation services for general cargo, including a specialization in mining machinery and equipment. Our expert handling and storage solutions cater to a wide variety of packaged goods, ensuring safe and efficient delivery of each item, no matter the size or complexity.',
+  },
+  {
+    id: 'expertise-5',
+    name: 'Bulk Transport Solutions',
+    description:
+      'Our fleet includes versatile tipper trucks, perfect for the transportation of all minerals, mining commodities, and grains. Our robust vehicles are specifically designed to handle a variety of bulk materials, ensuring that everything from loose minerals to grains is delivered safely and efficiently. With our reliable tipping mechanism, we guarantee a smooth unloading process at your destination, making us the go-to choice for all your bulk transportation needs in the mining and agricultural sectors',
+  },
+  {
+    id: 'expertise-6',
+    name: 'Oversized Cargo Logistics',
+    description:
+      'Our team excels in the transportation of abnormal loads, offering specialized services for oversized and heavy cargo that exceeds standard dimensions. Our expertise ensures that your large-scale equipment and structures are transported with precision, safety, and compliance with all regulations. Trust us to manage the complexities of your abnormal load transportation, providing a seamless delivery experience from start to finish.',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-3 lg:gap-8">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Expertise</h2>
+      <div class="lg:col-span-2">
+        <dl
+          class="-mt-3"
+          x-data="{ selected: null, toggle(value) { this.selected = this.selected === value ? null : value } }"
+        >
+          {
+            features.map((feature, index) => (
+              <div
+                class="rounded-3xl px-4 transition"
+                x-data={`{ id: ${index}, get isOpen() { return this.id === this.selected }, get isNextOpen() { return (this.id + 1) === this.selected } }`}
+                x-bind:class="{ 'bg-primary-500/10 dark:bg-primary-400/10': isOpen }"
+              >
+                <dt
+                  class="border-b text-lg transition"
+                  x-cloak
+                  x-bind:class="{ 'border-transparent': isOpen || isNextOpen, 'border-primary-900/10 dark:border-primary-300/10': !(isOpen || isNextOpen) }"
+                >
+                  <button
+                    type="button"
+                    class="group block w-full py-6 text-left transition focus-visible:outline-none"
+                    aria-controls={feature.id}
+                    x-on:click="toggle(id)"
+                    aria-expanded="false"
+                    x-bind:aria-expanded="isOpen.toString()"
+                  >
+                    <div class="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                      <span class="font-medium">{feature.name}</span>
+                      <span class="ml-6 flex h-7 items-center">
+                        <svg
+                          class="text-primary-600 dark:text-primary-400 h-6 w-6 rotate-0 transform transition duration-200 ease-in-out"
+                          x-bind:class="{ '-rotate-180': isOpen, 'rotate-0': !isOpen }"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </dt>
+                <dd class="pb-6 pr-6" id={feature.id} x-show="isOpen" x-cloak x-collapse>
+                  <p class="text-primary-950/70 dark:text-primary-200/70 text-base">
+                    {feature.description}
+                  </p>
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
