@@ -1,0 +1,138 @@
+---
+const stats = [
+  {
+    name: 'Years',
+    value: '5',
+  },
+  {
+    name: 'Experts',
+    value: '75',
+  },
+  {
+    name: 'Trucks',
+    value: '65',
+  },
+  {
+    name: 'Miles',
+    value: 'Infite & Counting',
+  },
+];
+
+const images = ["https://cdn.cosmicjs.com/e63e94c0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-04-at-6.03.03-PM.jpeg", 
+                "https://cdn.cosmicjs.com/e64ceca0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-04-at-6.03.02-PM.jpeg", 
+                "https://cdn.cosmicjs.com/e5ed4070-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.46-PM.jpeg",
+                "https://cdn.cosmicjs.com/e5ebb9d0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.47.45-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e5e180a0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.47.44-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e5d91c30-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-04-at-6.03.02-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e5c80530-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.47.45-PM.jpeg",
+                "https://cdn.cosmicjs.com/e5950e50-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.47.44-PM.jpeg",
+                "https://cdn.cosmicjs.com/e530ce40-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.45-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e5213de0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.47.13-PM.jpeg",
+                "https://cdn.cosmicjs.com/e514e1d0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.45.48-PM.jpeg",
+                "https://cdn.cosmicjs.com/e4f8a740-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.45-PM.jpeg",
+                "https://cdn.cosmicjs.com/e4c51420-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.46.11-PM.jpeg",
+                "https://cdn.cosmicjs.com/e49d67e0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.53-PM.jpeg",
+                "https://cdn.cosmicjs.com/e4748320-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.53-PM-2.jpeg",
+                "https://cdn.cosmicjs.com/e47df900-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.44.25-PM.jpeg",
+                "https://cdn.cosmicjs.com/e46a22e0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.53-PM-1.jpeg", 
+                "https://cdn.cosmicjs.com/e41aa350-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.42.20-PM.jpeg", 
+                "https://cdn.cosmicjs.com/e3fd5750-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.52-PM.jpeg",
+                "https://cdn.cosmicjs.com/e407dea0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.15-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e3e2f180-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.15-PM.jpeg",
+                "https://cdn.cosmicjs.com/e3c29840-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.43.14-PM.jpeg",
+                "https://cdn.cosmicjs.com/e37b2f00-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.36.51-PM.jpeg",
+                "https://cdn.cosmicjs.com/e370cec0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.41.34-PM.jpeg",
+                "https://cdn.cosmicjs.com/e3555780-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.37.51-PM.jpeg",
+                "https://cdn.cosmicjs.com/e32baf70-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.38.58-PM.jpeg",
+                "https://cdn.cosmicjs.com/e322d5d0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.39.45-PM.jpeg",
+                "https://cdn.cosmicjs.com/e2794f60-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.32-PM.jpeg",
+                "https://cdn.cosmicjs.com/e2724a80-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.37.50-PM.jpeg",
+                "https://cdn.cosmicjs.com/e2579690-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.34-PM.jpeg",
+                "https://cdn.cosmicjs.com/e2688680-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.40.17-PM.jpeg",
+                "https://cdn.cosmicjs.com/e2543b30-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.56-PM.jpeg",
+                "https://cdn.cosmicjs.com/e1b7ad10-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.34-PM-1.jpeg", 
+                "https://cdn.cosmicjs.com/e1b42aa0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.59-PM-1.jpeg", 
+                "https://cdn.cosmicjs.com/e117c390-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.58-PM.jpeg",
+                "https://cdn.cosmicjs.com/e1076fe0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.31-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e1155290-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.59-PM.jpeg",
+                "https://cdn.cosmicjs.com/e0d192d0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.33-PM.jpeg",
+                "https://cdn.cosmicjs.com/e074f3e0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.33-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/e04afdb0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.32-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/dfe955b0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.58-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/df998800-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.31-PM.jpeg",
+                "https://cdn.cosmicjs.com/df136810-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.30-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/df1f27e0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.30-PM.jpeg",
+                "https://cdn.cosmicjs.com/df0a4050-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.57-PM.jpeg",
+                "https://cdn.cosmicjs.com/dedc2b70-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.26-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/de8c5dc0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.29-PM.jpeg",
+                "https://cdn.cosmicjs.com/de62dcc0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.27-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/de621970-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.27-PM.jpeg", 
+                "https://cdn.cosmicjs.com/de5659a0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.28-PM.jpeg", 
+                "https://cdn.cosmicjs.com/dd9cf4b0-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.22.57-PM-1.jpeg",
+                "https://cdn.cosmicjs.com/dd77b970-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.26-PM.jpeg",
+                "https://cdn.cosmicjs.com/dd76f620-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.24-PM.jpeg",
+                "https://cdn.cosmicjs.com/dd43d830-24bb-11ef-b014-77e5f94e7d68-WhatsApp-Image-2024-06-03-at-4.15.28-PM-1.jpeg",
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
+      <div class="image-grid ">
+        {images.map(image => (
+          <img class="hidden xl:block" src={image} alt="Gallery Image" />
+        ))}
+      </div>
+      <div class="flex flex-col gap-10">
+        <!-- Mission description -->
+        <div class="space-y-8 sm:space-y-12">
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our mission</h2>
+          <div class="space-y-6">
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+               To offer leading logistical services that advance our clients competitive edge, guaranteeing timely, safe, and cost-effective deliveries, a secure workplace, and steadfast integrity in all our partnerships.
+            </p>
+          </div>
+        </div>
+        <!-- Vission description -->
+        <div class="space-y-8 sm:space-y-12">
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our Vission</h2>
+          <div class="space-y-6">
+            <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+              To become the region's transport and logistics partner of choice, forging enduring customer relationships anchored in trust and satisfaction
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <dl class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {
+            stats.map((stat) => (
+              <div class="border-primary-900/10 dark:border-primary-300/10 rounded-3xl border p-6">
+                <dt class="text-base">{stat.name}</dt>
+                <dd class="text-3xl font-medium tracking-tight">{stat.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* Divide the grid into 10 columns */
+  grid-auto-rows: minmax(50px, auto); /* Define the minimum and maximum row height */
+  gap: 5px; /* Adjust the gap between images */
+}
+
+.image-grid img {
+  width: 100%; /* Occupy the entire width of the grid cell */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.image-grid img:hover {
+  transform: scale(5.5); /* Zoom effect on hover */
+}
+</style>
