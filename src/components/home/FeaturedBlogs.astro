@@ -1,0 +1,56 @@
+---
+import { getFeaturedPost } from '../lib/cosmic'
+
+
+
+const featuredPost = await getFeaturedPost()
+const tags = featuredPost.metadata.tags
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Read Our Stories</h2>
+      <div class="grid lg:grid-cols-1">
+        <a
+          href={`blog/${featuredPost.slug}`}
+          class="flex flex-col w-full max-w-md rounded-md bg-primary-500/10 dark:bg-primary-400/10 p-6 shadow-md transition-opacity hover:opacity-80"
+        >
+          {
+            featuredPost.metadata.cover_image && (
+              <img
+                src={`${featuredPost.metadata.cover_image.imgix_url}?w=1200&fit=max&auto=format,compression`}
+                alt="Featured Blog Post"
+                class="object-cover rounded-t-md h-64 w-full lg:h-80"
+                loading="lazy"
+                transition:name="cover image"
+              />
+            )
+          }
+          <div class="flex flex-col gap-y-2 pt-4">
+            <h2 class="text-3xl font-semibold focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200">
+              {featuredPost.title}
+            </h2>
+            <p class="text-lg focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200">
+              {featuredPost.metadata.excerpt}
+            </p>
+            {tags && (
+              <div class="flex flex-wrap gap-1">
+                {tags?.map(
+                  (tag: { title: string; metadata: { color?: string } }) => (
+                    <span
+                      class="w-fit whitespace-nowrap rounded-md bg-black px-2 text-sm font-bold text-white shadow transition"
+                      style={`background-color: ${tag.metadata.color}`}
+                    >
+                      {tag.title}
+                    </span>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

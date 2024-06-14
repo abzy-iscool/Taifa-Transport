@@ -1,0 +1,80 @@
+---
+const testimonials = [
+  {
+    name: 'Taifa Mining & Civils Limited',
+    description: 'Company',
+    image: 'https://cdn.cosmicjs.com/0ae0e8c0-24bf-11ef-b014-77e5f94e7d68-logo-removebg-preview.png',
+    message:
+      '“Taifa Transport and Logistics Ltd  for all our transportation and logistics needs for the past two years, and their service has been exceptional.”',
+  },
+  {
+    name: 'Hamid Mohamed',
+    description: 'Operations Manager',
+    image: 'https://cdn.cosmicjs.com/418f4e90-2698-11ef-b014-77e5f94e7d68-taifa-logo.png',
+    message:
+      '“Their team is professional, reliable, and always goes the extra mile to ensure timely delivery of goods.”',
+  },
+  {
+    name: ' Mainstream Trade Limited ',
+    description: 'Company',
+    image: 'https://cdn.cosmicjs.com/6d93db00-24bd-11ef-b014-77e5f94e7d68-MSLTD.png',
+    message:
+      '“Their extensive knowledge of the African logistics landscape and commitment to customer satisfaction have made a significant impact on my business operations.”',
+  },
+  {
+    name: 'Mussa Philipo',
+    description: 'Tracking Coordinator',
+    image: 'https://cdn.cosmicjs.com/418f4e90-2698-11ef-b014-77e5f94e7d68-taifa-logo.png',
+    message:
+      '“ Whether its handling complex shipments or providing efficient transport solutions, Taifa Transport and Logistics Ltd consistently delivers top-notch service. I highly recommend them to anyone looking for a dependable logistics partner in Africa.”',
+  },
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="v mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col items-center gap-12 lg:gap-20">
+      <h2 class="mx-auto max-w-xl text-center text-3xl font-medium tracking-tight sm:text-4xl">
+        Your Trust Our Commitment
+      </h2>
+      <p class="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-2xl text-lg">
+        Trusted by Many Proven by Experience
+      </p>
+      <div
+        class="divide-primary-900/10 dark:divide-primary-300/10 grid divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0"
+      >
+        {
+          testimonials.map((testimonial) => (
+            <figure class="mx-auto flex max-w-lg flex-col items-center gap-6 py-8 lg:px-8 lg:py-0">
+              <div class="flex flex-row gap-2">
+                {[...Array(3)].map(() => (
+                  <svg
+                    class="text-primary-600 dark:text-primary-400 h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote class="text-primary-950/70 dark:text-primary-200/70 text-center text-lg italic leading-loose">
+                <p>{testimonial.message}</p>
+              </blockquote>
+              <figcaption class="flex flex-col gap-4">
+                <img class="mx-auto h-10 w-10 rounded-full" src={testimonial.image} alt="img" />
+                <div class="text-center">
+                  <div class="text-base font-medium">{testimonial.name}</div>
+                  <div class="text-primary-950/70 dark:text-primary-200/70 text-sm">
+                    {testimonial.description}
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

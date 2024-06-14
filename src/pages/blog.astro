@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro'
+import BlogCard from '../components/blog/BlogCard.astro'
+import { getAllPosts } from '../components/lib/cosmic'
+
+const data = await getAllPosts()
+
+export interface Post {
+  title: string
+  slug: string
+  metadata: {
+    excerpt: string
+    tags: {
+      title: string
+      metadata: {
+        color?: string
+      }
+    }[]
+  }
+}
+---
+
+<Layout title='Blogs' description='Taifa Transport Blogs'>
+  <section>
+    <ul class="grid gap-5 md:grid-cols-3">
+      {
+        data.map((post: Post) => (
+          <BlogCard
+            title={post.title}
+            href={post.slug}
+            body={post.metadata.excerpt}
+            tags={post.metadata.tags.map((tag) => tag)}
+          />
+        ))
+      }
+    </ul>
+  </section>
+  <div class="my-12"></div>
+</Layout>
